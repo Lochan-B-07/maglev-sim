@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Maglev Simulation</title>
+    <style>
+        body { margin: 0; overflow: hidden; background-color: #000; font-family: 'Courier New', Courier, monospace; }
+        #ui {
+            position: absolute; top: 15px; left: 15px; color: #00ffcc; 
+            background: rgba(10, 15, 20, 0.85); padding: 20px; border-radius: 5px; 
+            border: 1px solid #005544; width: 280px; text-shadow: 0 0 5px #00ffcc;
+        }
+        h3 { margin-top: 0; border-bottom: 1px solid #005544; padding-bottom: 10px; font-size: 16px; }
+        .control { margin-bottom: 15px; }
+        label { display: block; font-size: 12px; margin-bottom: 5px; }
+        input[type="range"] { width: 100%; cursor: pointer; accent-color: #00ffcc; }
+        #telemetry { margin-top: 15px; padding-top: 15px; border-top: 1px solid #005544; font-size: 12px; line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <div id="ui">
+        <h3>PID Flight Controller</h3>
+        
+        <div class="control">
+            <label id="lbl-p">Proportional (P): 500k</label>
+            <input type="range" id="val-p" min="0" max="1000000" step="10000" value="500000">
+        </div>
+        <div class="control">
+            <label id="lbl-d">Derivative (D): 30k</label>
+            <input type="range" id="val-d" min="0" max="100000" step="1000" value="30000">
+        </div>
+        <div class="control">
+            <label id="lbl-prop">Propulsion Force: 60 kN</label>
+            <input type="range" id="val-prop" min="0" max="200" step="5" value="60">
+        </div>
+
+        <div id="telemetry">System Initializing...</div>
+    </div>
+    
+    <script type="module" src="/main.js"></script>
+</body>
+</html>
